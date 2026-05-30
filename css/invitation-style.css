@@ -1,0 +1,22 @@
+.landing-video-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.landing-video-container video{
+    width: 100%;
+    max-width: 900px;
+
+    height: auto;
+
+    border-radius: 12px;
+    /*aspect-ratio: 16/9;*/
+
+    object-fit: contain;
+}
