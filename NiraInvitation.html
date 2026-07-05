@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranjani & Nirmal - Wedding Invitation</title></head>
+    <link href="css/invitation-style.css" rel="stylesheet">
+    <script>
+        const GUEST_1= "GUEST_1";
+        const GUEST_2= "GUEST_2";
+        function loadGuests() {
+            console.log("GUEST");
+            let parameters = new URLSearchParams(window.location.search)
+            document.getElementById("guest1").innerHTML = parameters.get(GUEST_1);
+            console.log(parameters.get(GUEST_1));
+            if(parameters.get(GUEST_2)){
+                document.getElementById("guest2").innerHTML = parameters.get(GUEST_2);
+                console.log(parameters.get(GUEST_2));
+            }
+        }
+        window.onload = () => {loadGuests()}
+    </script>
+<body>
+<div>
+    <p>Invitation Works - In Progress</p>
+</div>
+<div class="landing-video-container">
+    <video autoplay muted loop playsinline id="landingVideo">
+        <source src="resource/LandingVideo.mp4" type="video/mp4">
+    </video>
+</div>
+    <div class="inv_card">
+        <p>Hi </p>
+        <p id="guest1"></p>
+        <br> <span class="ampersand">&amp;</span>
+        <p id="guest2"></p>
+    </div>
+</body>
+</html>

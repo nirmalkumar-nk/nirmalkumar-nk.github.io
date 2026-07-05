@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.stars-hero {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    padding: 1rem;
+
+    background-image: url("/resource/NiraInStars.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.names {
+    /* Adjust this to move the names down from the top of the image. */
+    --names-top-offset: 6rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    margin-top: var(--names-top-offset);
+
+    /*font-family: "Brush Script MT", cursive;*/
+    /*font-family: p22-morris-golden, sans-serif;*/
+    font-family: "Rouge Script", cursive;
+    font-style: normal;
+    font-weight: bold;
+    color: #fdf6e3;
+    text-align: center;
+}
+
+.name {
+    font-size: clamp(2rem, 12vw, 4rem);
+    text-shadow: 0 0 6px #fff6cc, 0 0 12px #f2d675, 0 0 18px #f2d675;
+    transition: text-shadow 2.5s ease-in-out;
+}
+
+.name.glow {
+    text-shadow: 0 0 14px #fff6cc, 0 0 28px #f2d675, 0 0 40px #f2d675;
+}
+
+.ampersand {
+    font-size: clamp(1.25rem, 7vw, 2.5rem);
+    color: #f2d675;
+}
+
+.names .word {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.names .word.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stars-field {
+    position: relative;
+    width: 100%;
+    max-width: 32rem;
+
+    perspective: 800px;
+    --scroll-shift: 0px;
+}
+
+.invite-text {
+    --names-top-offset: 10rem;
+
+    position: relative;
+    z-index: 2;
+
+    max-width: 32rem;
+    padding: 0 1rem;
+
+    margin: var(--names-top-offset) 0 0;
+
+    /*font-family: Georgia, "Times New Roman", serif;*/
+    font-family: "Rouge Script", cursive;
+    font-size: clamp(2.5rem, 4.2vw, 1.8rem);
+    line-height: 1.7;
+    color: #fdf6e3;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.star {
+    position: absolute;
+    z-index: 1;
+    top: var(--y);
+    left: var(--x);
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: #fff8dc;
+    box-shadow: 0 0 6px 2px rgba(255, 246, 204, 0.9);
+
+    transform: translateZ(calc(var(--depth) + var(--scroll-shift)));
+    pointer-events: none;
+    will-change: transform;
+}
+
+.shooting-stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shooting-star {
+    position: absolute;
+    top: var(--start-y);
+    left: var(--start-x);
+
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.9);
+
+    animation: shoot var(--duration) linear forwards;
+}
+
+.shooting-star::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
+    transform: translateY(-50%);
+}
+
+@keyframes shoot {
+    0% {
+        transform: rotate(var(--angle)) translateX(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(var(--angle)) translateX(var(--distance));
+        opacity: 0;
+    }
+}
