@@ -2,37 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ranjani & Nirmal - Wedding Invitation</title></head>
-<link href="css/invitation-style.css" rel="stylesheet">
-<script>
-    const GUEST_1= "GUEST_1";
-    const GUEST_2= "GUEST_2";
-    function loadGuests() {
-        console.log("GUEST");
-        let parameters = new URLSearchParams(window.location.search)
-        document.getElementById("guest1").innerHTML = parameters.get(GUEST_1);
-        console.log(parameters.get(GUEST_1));
-        if(parameters.get(GUEST_2)){
-            document.getElementById("guest2").innerHTML = parameters.get(GUEST_2);
-            console.log(parameters.get(GUEST_2));
-        }
-    }
-    window.onload = () => {loadGuests()}
-</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nira Invitation</title>
+    <link href="css/nira-invitation.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+</head>
 <body>
-<div>
-    <p>Invitation Works - In Progress</p>
+<div class="stars-hero">
+    <div class="shooting-stars" id="shootingStars"></div>
+<!--    <div class="names">-->
+<!--        <span class="name word">Nirmal</span>-->
+<!--        <span class="ampersand word">&amp;</span>-->
+<!--        <span class="name word">Ranjani</span>-->
+<!--    </div>-->
+    <p class="invite-text">Out of those millions of stars, life found its place only under the warmth sun. We found love in the warmth of each other.</p>
 </div>
-<div class="landing-video-container">
-    <video autoplay muted loop playsinline id="landingVideo">
-        <source src="resource/EngagementInvitation.mp4" type="video/mp4">
-    </video>
-</div>
-<div class="inv_card">
-    <p>Hi </p>
-    <p id="guest1"></p>
-    <br> <span class="ampersand">&amp;</span>
-    <p id="guest2"></p>
-</div>
+<script src="js/nira-invitation.js"></script>
 </body>
 </html>
