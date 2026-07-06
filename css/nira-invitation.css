@@ -69,22 +69,25 @@ body {
 
     /*font-family: "Brush Script MT", cursive;*/
     /*font-family: p22-morris-golden, sans-serif;*/
-    font-family: "Rouge Script", cursive;
-    font-style: normal;
-    font-weight: bold;
+    /*font-family: p22-morris-golden, sans-serif;*/
+    /*font-family: "Jim Nightshade", cursive;*/
+    /*font-style: normal;*/
     color: #fdf6e3;
     text-align: center;
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .name {
     font-size: clamp(2rem, 12vw, 4rem);
-    text-shadow: 0 0 6px #fff6cc, 0 0 12px #f2d675, 0 0 18px #f2d675;
+    /*text-shadow: 0 0 6px #fff6cc, 0 0 12px #f2d675, 0 0 18px #f2d675;*/
     transition: text-shadow 2.5s ease-in-out;
 }
 
-.name.glow {
-    text-shadow: 0 0 14px #fff6cc, 0 0 28px #f2d675, 0 0 40px #f2d675;
-}
+/*.name.glow {*/
+/*    text-shadow: 0 0 14px #fff6cc, 0 0 28px #f2d675, 0 0 40px #f2d675;*/
+/*}*/
 
 .ampersand {
     font-size: clamp(1.25rem, 7vw, 2.5rem);
