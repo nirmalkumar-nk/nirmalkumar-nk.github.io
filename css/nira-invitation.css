@@ -55,6 +55,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.yellow-paper{
+    background-image: url("../resource/YellowParchment.jpg");
+}
+
 .names {
     /* Adjust this to move the names down from the top of the image. */
     --names-top-offset: 6rem;
@@ -369,7 +373,9 @@ body {
     width: var(--size);
     height: var(--size);
 
-    background: radial-gradient(circle at 30% 30%, #f9c600, #f9c600 70%);
+    /*background: radial-gradient(circle at 30% 30%, #f9c600, #f9c600 70%);*/
+    background-image: url("../resource/Kondrai.png");
+    background-size: contain;
     border-radius: 60% 40% 60% 40% / 60% 60% 40% 40%;
 
     animation: petal-fall var(--duration) linear var(--delay) forwards;

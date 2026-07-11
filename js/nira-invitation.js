@@ -98,7 +98,7 @@ function initScrollTint(tintEl) {
 
 const SCRATCH_REVEAL_THRESHOLD = 0.5;
 const SCRATCH_BRUSH_RADIUS = 18;
-const PETAL_COUNT = 40;
+const PETAL_COUNT = 70;
 
 function initScratchCard(card, onRevealed) {
     const canvas = card.querySelector(".scratch-canvas");
@@ -219,7 +219,7 @@ function spawnPetalConfetti(container, count) {
         const petal = document.createElement("span");
         petal.className = "petal";
         petal.style.setProperty("--left", `${Math.random() * 100}%`);
-        petal.style.setProperty("--size", `${8 + Math.random() * 10}px`);
+        petal.style.setProperty("--size", `${28 + Math.random() * 24}px`);
         petal.style.setProperty("--drift", `${Math.random() * 120 - 60}px`);
         petal.style.setProperty("--spin", `${Math.random() * 360}deg`);
         petal.style.setProperty("--duration", `${3 + Math.random() * 2}s`);
