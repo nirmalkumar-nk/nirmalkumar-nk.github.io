@@ -272,6 +272,7 @@ body {
 
 .scratch-circle .scratch-reveal {
     background: #011530;
+    /*background: #f2d675;*/
 }
 
 .scratch-value {
@@ -280,6 +281,7 @@ body {
     font-size: clamp(1.1rem, 5vw, 1.5rem);
     font-weight: 600;
     color: #f2d675;
+    /*color: #011530;*/
     animation: gold-glow 2.5s ease-in-out infinite alternate;
 }
 
@@ -356,6 +358,87 @@ body {
     background: #011530;
 }
 
+.timeline {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 32rem;
+    margin-top: 2rem;
+    padding: 0.5rem 0 1rem;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+
+    background: linear-gradient(180deg, transparent, #f2d675 6%, #f2d675 94%, transparent);
+    box-shadow: 0 0 8px rgba(242, 214, 117, 0.6);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding-bottom: 2.75rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-left {
+    left: 0;
+    padding-right: 1.75rem;
+    text-align: right;
+}
+
+.timeline-right {
+    left: 50%;
+    padding-left: 1.75rem;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 0.25rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    background: #f2d675;
+    box-shadow: 0 0 6px #f2d675, 0 0 12px rgba(242, 214, 117, 0.7);
+}
+
+.timeline-left .timeline-dot {
+    right: -5px;
+}
+
+.timeline-right .timeline-dot {
+    left: -5px;
+}
+
+.timeline-date {
+    margin: 0 0 0.2rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f2d675;
+}
+
+.timeline-text {
+    margin: 0;
+    font-family: "Rouge Script", cursive;
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    line-height: 1.3;
+    color: #fdf6e3;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
 .petal-confetti {
     position: fixed;
     inset: 0;
@@ -374,7 +457,9 @@ body {
     height: var(--size);
 
     /*background: radial-gradient(circle at 30% 30%, #f9c600, #f9c600 70%);*/
-    background-image: url("../resource/Kondrai.png");
+    /*background-image: url("../resource/Kondrai.png");*/
+    /*background-image: url("../resource/GoldenKondrai_.png");*/
+    background-image: url("../resource/BrightGoldKondrai_.png");
     background-size: contain;
     border-radius: 60% 40% 60% 40% / 60% 60% 40% 40%;
 
