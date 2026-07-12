@@ -64,7 +64,8 @@ function scheduleShootingStars(container) {
 }
 
 const TINT_COLOR_START = [1, 21, 48];
-const TINT_COLOR_END = [201, 178, 140];
+// const TINT_COLOR_END = [201, 178, 140];
+const TINT_COLOR_END = [1, 21, 48];
 
 function lerp(a, b, t) {
     return a + (b - a) * t;
