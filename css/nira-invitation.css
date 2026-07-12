@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --scratch-reveal-colour: #faeabf;
+    --dirty-brown-colour: #a58310;
+}
+
 body {
     margin: 0;
     background-color: #011530;
@@ -49,14 +54,11 @@ body {
     width: 100%;
     padding: 1rem;
 
-    background-image: url("../resource/Parchment.jpg");
+    /*background-image: url("../resource/Parchment.jpg");*/
+    background-image: url("../resource/BlueParchment.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.yellow-paper{
-    background-image: url("../resource/YellowParchment.jpg");
 }
 
 .names {
@@ -94,7 +96,8 @@ body {
 
 .ampersand {
     font-size: clamp(1.25rem, 7vw, 2.5rem);
-    color: #f2d675;
+    /*color: #f2d675;*/
+    color: var(--dirty-brown-colour);
 }
 
 .names .word {
@@ -267,12 +270,12 @@ body {
     justify-content: center;
     gap: 0.25rem;
 
-    background: #fdf6e3;
+    background: var(--scratch-reveal-colour);
 }
 
 .scratch-circle .scratch-reveal {
-    background: #011530;
-    /*background: #f2d675;*/
+    /*background: #011530;*/
+    background: #f2d675;
 }
 
 .scratch-value {
@@ -280,9 +283,9 @@ body {
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(1.1rem, 5vw, 1.5rem);
     font-weight: 600;
-    color: #f2d675;
+    color: var(--dirty-brown-colour);
     /*color: #011530;*/
-    animation: gold-glow 2.5s ease-in-out infinite alternate;
+    animation: white-glow 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes gold-glow {
@@ -355,7 +358,9 @@ body {
 }
 
 .flip-circle .scratch-reveal {
-    background: #011530;
+    /*background: #011530;*/
+    /*background: #fdf6e3;*/
+    background: #faeabf;
 }
 
 .timeline {
@@ -377,6 +382,7 @@ body {
     transform: translateX(-50%);
 
     background: linear-gradient(180deg, transparent, #f2d675 6%, #f2d675 94%, transparent);
+    /*background: linear-gradient(180deg, transparent, var(--scratch-reveal-colour) 6%, var(--scratch-reveal-colour) 94%, transparent);*/
     box-shadow: 0 0 8px rgba(242, 214, 117, 0.6);
 }
 
