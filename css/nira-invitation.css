@@ -81,7 +81,7 @@ body {
     margin: 0;
     /*font-family: Georgia, "Times New Roman", serif;*/
     font-family: "Rouge Script", cursive;
-    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    font-size: clamp(0.95rem, 3vw, 2.0rem);
     line-height: 1.9;
     color: #fdf6e3;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
@@ -89,7 +89,7 @@ body {
 
 .parent-name {
     font-family: "Rouge Script", cursive;
-    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    font-size: clamp(1.3rem, 5vw, 2.5rem);
     color: #f2d675;
     text-shadow: 0 0 6px rgba(242, 214, 117, 0.5);
 }
@@ -118,7 +118,7 @@ body {
 }
 
 .name {
-    font-size: clamp(2rem, 12vw, 4rem);
+    font-size: clamp(2rem, 12vw, 5rem);
     /*text-shadow: 0 0 6px #fff6cc, 0 0 12px #f2d675, 0 0 18px #f2d675;*/
     transition: text-shadow 2.5s ease-in-out;
 }
@@ -340,7 +340,7 @@ body {
     justify-content: center;
     gap: 1.25rem;
 
-    margin-top: 1rem;
+    margin-top: 2.5rem;
 }
 
 .flip-circle {
