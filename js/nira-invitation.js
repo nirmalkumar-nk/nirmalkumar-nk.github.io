@@ -206,9 +206,13 @@ function initFlipCard(card, cards) {
             const confetti = document.getElementById("petalConfetti");
             spawnPetalConfetti(confetti, PETAL_COUNT);
 
-            const saveDateMessage = document.getElementById("saveDateMessage");
-            if (saveDateMessage) {
+            const saveDateMessage = document.getElementById("saveDateBox");
+            const calendarAndLocationMessage = document.querySelectorAll(".save-date-message");
+            if (calendarAndLocationMessage && saveDateMessage && calendarAndLocationMessage.length > 0) {
                 saveDateMessage.classList.add("visible");
+                calendarAndLocationMessage.forEach( messageBox => {
+                    messageBox.classList.add("visible");
+                })
             }
         }
     });
