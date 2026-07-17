@@ -461,6 +461,10 @@ body {
     pointer-events: auto;
 }
 
+.save-date-message:nth-of-type(2) {
+    transition-delay: 0.1s;
+}
+
 .save-date-text {
     margin: 0;
     font-family: "Rouge Script", cursive;
