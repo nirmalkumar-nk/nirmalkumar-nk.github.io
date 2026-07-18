@@ -252,10 +252,14 @@ function primeVideoFrame(video) {
     }
 }
 
+const FADE_OUT_START_SECONDS = 6;
+const FADE_OUT_FALLBACK_DURATION_MS = 1500;
+
 function initMoonLanding(section, mainInvite) {
     const video = section.querySelector(".moon-landing-video");
     const hint = section.querySelector(".moon-landing-hint");
     let started = false;
+    let fadeStarted = false;
 
     primeVideoFrame(video);
 
@@ -269,6 +273,20 @@ function initMoonLanding(section, mainInvite) {
         }
         video.muted = false;
         video.play();
+    });
+
+    video.addEventListener("timeupdate", () => {
+        if (fadeStarted || video.currentTime < FADE_OUT_START_SECONDS) {
+            return;
+        }
+        fadeStarted = true;
+
+        const remaining = video.duration - FADE_OUT_START_SECONDS;
+        const fadeDurationMs = Number.isFinite(remaining) && remaining > 0
+            ? remaining * 1000
+            : FADE_OUT_FALLBACK_DURATION_MS;
+        section.style.transitionDuration = `${fadeDurationMs}ms`;
+        section.classList.add("fading-out");
     });
 
     video.addEventListener("ended", () => {

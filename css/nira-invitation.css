@@ -23,6 +23,12 @@ body {
     overflow: hidden;
     background-color: #011530;
     cursor: pointer;
+    opacity: 1;
+    transition: opacity 1.5s ease-in;
+}
+
+.moon-landing.fading-out {
+    opacity: 0;
 }
 
 .moon-landing-video {
