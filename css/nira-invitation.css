@@ -428,6 +428,19 @@ body {
     animation: flip-card-shake 4s ease-in-out infinite;
 }
 
+@keyframes vertical-card-shake {
+    0%, 25%, 100% { transform: translateX(0); }
+    2% { transform: translateX(-4px); }
+    4% { transform: translateX(4px); }
+    6% { transform: translateX(-4px); }
+    8% { transform: translateX(4px); }
+    10% { transform: translateX(-3px); }
+    12% { transform: translateX(3px); }
+    14% { transform: translateX(-2px); }
+    16% { transform: translateX(2px); }
+    18% { transform: translateX(0); }
+}
+
 @keyframes flip-card-shake {
     0%, 25%, 100% { transform: translateX(0) rotate(0deg); }
     2% { transform: translateX(-4px) rotate(-4deg); }

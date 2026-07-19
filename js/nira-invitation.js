@@ -3,6 +3,30 @@ const WORD_REVEAL_DELAY_MS = 500;
 const STAR_COUNT = 40;
 const STAR_SCROLL_RANGE_PX = 500;
 
+function loadGuests(){
+
+    const GUEST_1= "GUEST_1";
+    const GUEST_2= "GUEST_2";
+    const nameRegex= "^[a-zA-Z]+$";
+
+    let parameters = new URLSearchParams(window.location.search)
+    const guest1 = parameters.get(GUEST_1);
+    const guest2 = parameters.get(GUEST_2);
+    let names = "Dear";
+    if(guest1 !== null && guest1.length !== 0 && guest1.match(nameRegex)){
+        names += " ".concat(guest1);
+    }
+    if(guest2 !== null && guest2.length !== 0 && guest2.match(nameRegex)){
+        names += " & ".concat(guest2);
+    }
+
+    const msg = names+",<br>Ranjani &amp; Nirmal have a message for you";
+    console.log(msg);
+    const guestCard = document.getElementById("guestNames");
+    guestCard.innerHTML = msg;
+    guestCard.classList.add("invitation-text");
+}
+
 function createStarField(container, count) {
     for (let i = 0; i < count; i++) {
         const star = document.createElement("span");
@@ -212,6 +236,7 @@ function initFlipCard(card, cards) {
                 saveDateMessage.classList.add("visible");
                 calendarAndLocationMessage.forEach( messageBox => {
                     messageBox.classList.add("visible");
+                    messageBox.style.animation="vertical-card-shake 4s ease-in-out infinite";
                 })
             }
         }
@@ -308,6 +333,9 @@ function revealWords(onDone) {
 }
 
 window.onload = () => {
+
+    loadGuests();
+
     const moonLandingVideo = document.getElementById("moonLandingVideo");
     const mainInvite = document.getElementById("mainInvite");
     if (moonLandingVideo && mainInvite) {
