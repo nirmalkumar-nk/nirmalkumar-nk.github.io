@@ -52,8 +52,9 @@ body {
     margin: 0;
     padding: 0 1rem;
 
-    font-size: clamp(1.3rem, 4.5vw, 2rem);
-    line-height: 1.5;
+    width: 100%;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    line-height: 1.6;
     text-align: center;
     color: #fdf6e3;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
@@ -228,6 +229,9 @@ body {
 .moon-landing-text .word.reveal {
     opacity: 1;
     transform: translateY(0);
+}
+
+.names .word.reveal {
     font-size: clamp(1.5rem, 3vw, 4.0rem);
 }
 

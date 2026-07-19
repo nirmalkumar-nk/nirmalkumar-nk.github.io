@@ -22,15 +22,15 @@ function loadGuests(){
         guestNames += (guestNames.length !== 0 ? " & " : "") + guest2;
     }
 
-    const lines = [
-        { text: "Dear,", wordByWord: true },
-        { text: guestNames.length !== 0 ? `${guestNames},` : "", wordByWord: true },
-        { text: "Ranjani &amp; Nirmal have a message for you", wordByWord: false },
-    ].filter((line) => line.text.length !== 0);
+    const lineSegments = [wrapWords("Dear,")];
 
-    const msg = lines
-        .map((line) => (line.wordByWord ? wrapWords(line.text) : wrapLine(line.text)))
-        .join("<br>");
+    if (guestNames.length !== 0) {
+        lineSegments.push(wrapWords(`${guestNames},`));
+    }
+
+    lineSegments.push(wrapLine("Ranjani &amp; Nirmal have a message for you"));
+
+    const msg = lineSegments.join("<br>");
     const guestCard = document.getElementById("guestNames");
     guestCard.innerHTML = msg;
     guestCard.classList.add("invitation-text");
